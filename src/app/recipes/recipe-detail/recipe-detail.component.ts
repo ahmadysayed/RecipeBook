@@ -9,7 +9,6 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  isDropdownOpen = false;
 
   @Input() recipe!: Recipe;
 
@@ -17,10 +16,6 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit(){
     
-  }
-
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
   }
 
   onAddToShoppingList(){
