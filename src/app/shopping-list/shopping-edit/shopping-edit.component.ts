@@ -9,22 +9,19 @@ import { ShoppingListService } from '../shopping-list.service';
 })
 export class ShoppingEditComponent implements OnInit {
 
-  @ViewChild('nameInput', {static: false}) nameInputRef!: ElementRef;
-  @ViewChild('amountInput', {static: false}) amountInputRef!: ElementRef;
+  @ViewChild('nameInput', { static: false }) nameInputRef!: ElementRef;
+  @ViewChild('amountInput', { static: false }) amountInputRef!: ElementRef;
 
-
-  constructor(private slService: ShoppingListService){}
+  constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
-    
   }
 
-  onAddItem(event : Event){
+  onAddItem() {
     const ingName = this.nameInputRef.nativeElement.value;
     const ingAmount = this.amountInputRef.nativeElement.value;
-    const newIngredeint = new Ingredient(ingName, ingAmount);
-    this.slService.addIngredient(newIngredeint)
-    event.preventDefault(); 
+    const newIngredient = new Ingredient(ingName, ingAmount);
+    this.slService.addIngredient(newIngredient);
   }
 
 }
